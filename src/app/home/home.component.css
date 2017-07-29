@@ -1,0 +1,45 @@
+.msgBox{
+  border-style: groove !important;
+  /*min-height: 300px !important;*/
+  /*max-height: 300px !important;*/
+  background-color:white;
+  /*overflow-y: auto;*/
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.input-group{
+      padding: 2%;
+}
+.groupInfo{
+    margin-bottom: .5rem;
+}
+.noGroup{
+    margin-top: 2rem;
+}
+  li.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }
+
+
+  li.group li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: black;
+  }
+  li.group:hover {
+    color: #607D8B !important;
+    background-color: #DDD !important;
+    left: .1em;
+  }
+  .my-class{
+    color:greenyellow;
+  }
+  .me{
+    background-color: cornflowerblue;
+    /*float: right;*/
+    color: white;
+  }
+  .other{
+    background-color: lightgray;
+  }

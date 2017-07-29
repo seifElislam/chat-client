@@ -1,0 +1,66 @@
+<label for="">welcome: {{currentUser.username}}</label>
+<div class="row jumbotron">
+  <!-- <h4 style="text-align: center;"> Welcome : {{currentUser.username}}</h4> -->
+  <div class="col-md-3">
+
+<div class="row">
+  <div class="col-md-12">
+    <h4 style="    margin-bottom: 1rem;">My Friends:</h4>
+
+
+  </div>
+  <div   class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item group " *ngFor="let user of users" [class.selected]="group === currentGroup" (click)="onSelect(user)" >
+        <span class="badge" [ngClass]="{'my-class': user.login }">{{user.status}}</span>
+        {{user.username}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div   class="col-md-12 groupInfo">
+        <!-- <h3 style="display: inline;" class=""><span class="badge badge-default">{{currentGroup?.name}} group</span></h3> -->
+
+      </div>
+      <!-- <div *ngIf="noGroups" class="col-md-12 alert alert-danger noGroup" role="alert">
+        <strong>Oh snap!</strong> You have no groups yet
+      </div> -->
+      <p>you now chat with : {{currentFriend?.username}}</p>
+
+      <div   class="col-md-12 msgBox ">
+        <div *ngFor="let msg of msgs" style="padding: 1%;">
+          <!-- <p *ngIf="msg.from == currentUser.id" class="me"> me : {{msg.content}}</p>
+          <p *ngIf="msg.from == currentFriend.id" class="other"> {{currentFriend.username}} : {{msg.content}}</p> -->
+          <label *ngIf="msg.from == currentUser.id" class="me">me : {{msg.content}}</label><br *ngIf="msg.from == currentUser.id"/>
+          <label *ngIf="msg.from == currentFriend.id" class="other"> {{currentFriend.username}} : {{msg.content}}</label><br *ngIf="msg.from == currentFriend.id"/>
+
+          </div>
+        </div>
+      <div class="col-md-12 input-group">
+
+          <input type="text" class="form-control" #msg  [disabled]="!currentFriend">
+          <span class="input-group-btn">
+          <button [disabled]="!currentFriend" class="btn btn-secondary" (click)="send(msg)"><i class="fa  fa-plus-square"></i>Send</button>
+        </span>
+
+      </div>
+    </div>
+
+
+  <!-- <div class="row ">
+
+
+  </div>
+  <div class="row">
+
+  </div> -->
+
+
+
+  </div>
+
+</div>
